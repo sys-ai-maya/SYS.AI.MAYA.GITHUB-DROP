@@ -1,0 +1,20 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/sys-ai-maya/SYS.AI.MAYA.GITHUB-DROP/main/drop/manifest.schema.json",
+  "title": "SYS.AI.MAYA.GITHUB-DROP manifest",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "required": ["id", "file", "raw_url", "sha256", "bytes", "for", "created_at"],
+    "additionalProperties": false,
+    "properties": {
+      "id": { "type": "string" },
+      "file": { "type": "string", "description": "repo-relative path" },
+      "raw_url": { "type": "string", "format": "uri" },
+      "sha256": { "type": "string", "pattern": "^[0-9a-f]{64}$" },
+      "bytes": { "type": "integer", "minimum": 0 },
+      "for": { "type": "string", "description": "consumer and purpose" },
+      "created_at": { "type": "string", "format": "date-time" }
+    }
+  }
+}

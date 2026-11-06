@@ -1,0 +1,38 @@
+[
+  {
+    "id": "mythos-chip-repo.v31.verification-patch",
+    "file": "inventory/SYS.AI.MAYA.GITHUB-mythos-chip-repo.v31.verification-patch.json",
+    "raw_url": "https://raw.githubusercontent.com/sys-ai-maya/SYS.AI.MAYA.GITHUB-DROP/main/inventory/SYS.AI.MAYA.GITHUB-mythos-chip-repo.v31.verification-patch.json",
+    "sha256": "c9fa09df9c87b021eadb121d2ac0523c5b51283050b6d0c133c512cd065068a0",
+    "bytes": 18885,
+    "for": "perchance.org/mythos-chip-repo helper: merge verified, verified_summary, verified_at into shelf-index.json by id; mismatches[] review-only",
+    "created_at": "2026-11-06T14:45:00-07:00"
+  },
+  {
+    "id": "maya-drop-chip",
+    "file": "chips/maya-drop-chip/maya-drop-standalone.js",
+    "raw_url": "https://raw.githubusercontent.com/sys-ai-maya/SYS.AI.MAYA.GITHUB-DROP/main/chips/maya-drop-chip/maya-drop-standalone.js",
+    "sha256": "ddbc1062848e0773618900730b5c4af25ae5e894a30b535c33c0bad2516f561d",
+    "bytes": 9811,
+    "for": "perchance.org/mythos-chip-repo: vendor MythosDrop chip (CHIP SPEC v1)",
+    "created_at": "2026-11-06T14:45:00-07:00"
+  },
+  {
+    "id": "maya-drop-chip.readme",
+    "file": "chips/maya-drop-chip/README.md",
+    "raw_url": "https://raw.githubusercontent.com/sys-ai-maya/SYS.AI.MAYA.GITHUB-DROP/main/chips/maya-drop-chip/README.md",
+    "sha256": "553f668ca9de22abda5aff9c6f4f34743f1f669fbeae5ff642fec8a3e1f2ca12",
+    "bytes": 3841,
+    "for": "perchance.org/mythos-chip-repo: maya-drop-chip card/contract",
+    "created_at": "2026-11-06T14:45:00-07:00"
+  },
+  {
+    "id": "maya-drop-chip.rtfm",
+    "file": "chips/maya-drop-chip/RTFM.md",
+    "raw_url": "https://raw.githubusercontent.com/sys-ai-maya/SYS.AI.MAYA.GITHUB-DROP/main/chips/maya-drop-chip/RTFM.md",
+    "sha256": "9268f92aa0737797a114e309a284b7186b80d7ac42e1a7d96da521c456d4d098",
+    "bytes": 1566,
+    "for": "perchance.org/mythos-chip-repo: maya-drop-chip RTFM",
+    "created_at": "2026-11-06T14:45:00-07:00"
+  }
+]

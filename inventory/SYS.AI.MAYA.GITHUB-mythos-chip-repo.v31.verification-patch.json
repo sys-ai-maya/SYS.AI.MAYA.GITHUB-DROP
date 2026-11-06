@@ -1,0 +1,402 @@
+[
+ {
+  "id": "mythos-budget",
+  "call_number": "000.12 mythos-budget",
+  "verified": "ran",
+  "verified_summary": "Token budget: countTokens(text) estimates ceil(len/4) unless a counter is passed, budget() defaults to 6000, fits(text) returns {tokens,budget,fits,over}, share() mints seams.",
+  "verified_at": "2026-11-06T14:25:00-07:00",
+  "mismatches": []
+ },
+ {
+  "id": "mythos-keyring-chip",
+  "call_number": "000.14 mythos-keyring-chip",
+  "verified": "ran",
+  "verified_summary": "Provider key panel logic: fields(), valid(provider,key) checks the key shape, mask(provider,key) shows first 7 and last 4, save/load through host kv or localStorage, status() per provider.",
+  "verified_at": "2026-11-06T14:25:00-07:00",
+  "mismatches": [
+   "Card summary says it needs DOM for the snippet panel; the JS itself has no DOM code (the panel is the separate HTML snippet).",
+   "Card side_effects is empty, but save() writes keys to the host store or localStorage."
+  ]
+ },
+ {
+  "id": "mythos-quota-chip",
+  "call_number": "000.17 mythos-quota-chip",
+  "verified": "ran",
+  "verified_summary": "Storage headroom math: report(obj) sizes data, fits(obj,next) and advise() say whether a write fits; never opens a dialog.",
+  "verified_at": "2026-11-06T14:25:00-07:00",
+  "mismatches": []
+ },
+ {
+  "id": "sia-archetypes-chip",
+  "call_number": "000.22 sia-archetypes-chip",
+  "verified": "ran",
+  "verified_summary": "Data chip of 304 archetypes with list/get/domains/byDomain/search/pick/persona/blend/count; count() returns {archetypes:304, domains:...}.",
+  "verified_at": "2026-11-06T14:25:00-07:00",
+  "mismatches": []
+ },
+ {
+  "id": "sia-autonomy-chip",
+  "call_number": "000.24 sia-autonomy-chip",
+  "verified": "ran",
+  "verified_summary": "Static rules object: rules() lists her agentic rules, charter() returns the charter text, check(text) returns a list of rule hits ([] for 'Shall I go ahead?').",
+  "verified_at": "2026-11-06T14:25:00-07:00",
+  "mismatches": []
+ },
+ {
+  "id": "sia-autonomy-gate-chip",
+  "call_number": "000.25 sia-autonomy-gate-chip",
+  "verified": "ran",
+  "verified_summary": "Gate in front of an autonomy-mode client: act(verb) asks the regime and returns allow/hold, grant/deny resolve held acts; without a regime every act returns 'NO REGIME'.",
+  "verified_at": "2026-11-06T14:25:00-07:00",
+  "mismatches": []
+ },
+ {
+  "id": "sia-autonomy-mode-chip",
+  "call_number": "000.26 sia-autonomy-mode-chip",
+  "verified": "ran",
+  "verified_summary": "Three-posture regime (default SEMI): may(verb,cost) refuses outbound acts in SEMI and routes them to propose(); set/grant/revoke/deny/pending/audit manage grants.",
+  "verified_at": "2026-11-06T14:25:00-07:00",
+  "mismatches": []
+ },
+ {
+  "id": "sia-directives-chip",
+  "call_number": "000.35 sia-directives-chip",
+  "verified": "ran",
+  "verified_summary": "ES module: splitDirectives(text) pulls [TAG] / [[TAG]] markers out of a reply and returns {speakable, tags}; notifyDirectives(ui,tags) posts a SYSTEM line per tag through ui.addMsg; soundBite builds a per-turn record.",
+  "verified_at": "2026-11-06T14:25:00-07:00",
+  "mismatches": [
+   "Card kind is drop-in-script but the file uses ES 'export'; a plain script tag would throw. It must be imported as a module.",
+   "Card side_effects is empty, but notifyDirectives writes into the host chat window through ui.addMsg.",
+   "Tags must be uppercase: '[SAY hi there]' is not recognized as a directive and stays in the spoken text (run log)."
+  ]
+ },
+ {
+  "id": "sia-docstd-chip",
+  "call_number": "000.37 sia-docstd-chip",
+  "verified": "ran",
+  "verified_summary": "Document-control wrapper: wrap({title,body}) puts a Document Control block (version, date, author PATRIKIOS, approval) under the title and a Document History table after the body; day() returns YYYY-MM-DD.",
+  "verified_at": "2026-11-06T14:25:00-07:00",
+  "mismatches": []
+ },
+ {
+  "id": "sia-duty-chip",
+  "call_number": "000.38 sia-duty-chip",
+  "verified": "ran",
+  "verified_summary": "Master arm switch for autonomous lanes: mode/armed/level/allow(lane)/arm/setLevel/save/load; describe() renders the duty line for her prompt.",
+  "verified_at": "2026-11-06T14:25:00-07:00",
+  "mismatches": [
+   "Safety: with no options and no saved state it starts ARMED at FULL automation ('everything lit runs - the wide door...'); the card calls it the master arm switch but never states the default."
+  ]
+ },
+ {
+  "id": "sia-entropica-chip",
+  "call_number": "000.39 sia-entropica-chip",
+  "verified": "ran",
+  "verified_summary": "NUMMARKX codec plus Entropica science helpers: encode(text) -> {nummark}, decode(nummark) -> text, entropyOf/shannon, cube, glyphs, mythicResonance, handshake; encode->decode round-trips.",
+  "verified_at": "2026-11-06T14:25:00-07:00",
+  "mismatches": [
+   "Shipped companion file source/entropica_core.js does not parse (SyntaxError: Unexpected token '{'); the standalone does not load it, so the chip works without it.",
+   "Card output omits decode, shannon, glyphs, handshake and voice, which the handle exposes."
+  ]
+ },
+ {
+  "id": "sia-heart-chip",
+  "call_number": "000.42 sia-heart-chip",
+  "verified": "ran",
+  "verified_summary": "Taste record over vault items: mark(id, GOOD|PASS) writes a field on the host vault record, counts/ids/state/report read it back; without a vault every mark returns 'THE VAULT IS NOT LOADED HERE'.",
+  "verified_at": "2026-11-06T14:25:00-07:00",
+  "mismatches": []
+ },
+ {
+  "id": "sia-hers-chip",
+  "call_number": "000.44 sia-hers-chip",
+  "verified": "ran",
+  "verified_summary": "Her own memories and wants: remember/forget/memories and want/release/wants, with report and prompt blocks; needs load() and a host memory store, otherwise remember returns 'HER MEMORY STORE IS NOT LOADED HERE'.",
+  "verified_at": "2026-11-06T14:25:00-07:00",
+  "mismatches": []
+ },
+ {
+  "id": "sia-keyring-chip",
+  "call_number": "000.45 sia-keyring-chip",
+  "verified": "ran",
+  "verified_summary": "Provider key ring across rooms: set/get/has/clear/restore/mirrors/names, mask(value) shows first 7 and last 4 characters; in-memory without a host store.",
+  "verified_at": "2026-11-06T14:25:00-07:00",
+  "mismatches": []
+ },
+ {
+  "id": "sia-manual-chip",
+  "call_number": "000.49 sia-manual-chip",
+  "verified": "ran",
+  "verified_summary": "Per-agent user manual store: list/read/amend/add/share/receive/clear over a host store; list() is [] when nothing is loaded.",
+  "verified_at": "2026-11-06T14:25:00-07:00",
+  "mismatches": []
+ },
+ {
+  "id": "sia-qr",
+  "call_number": "000.54 sia-qr",
+  "verified": "ran",
+  "verified_summary": "Offline QR: make(text) returns {ok,size,ec,chars,at(r,c),svg(),ascii()} at the smallest version; read(rgba,w,h) decodes; make->read round-trip of 'SYS.AI.MAYA' passed.",
+  "verified_at": "2026-11-06T14:25:00-07:00",
+  "mismatches": [
+   "Card says make() returns {svg, ascii, matrix}: svg and ascii are functions to call, and there is no matrix field (use size and at(r,c))."
+  ]
+ },
+ {
+  "id": "sia-rating-chip",
+  "call_number": "000.56 sia-rating-chip",
+  "verified": "ran",
+  "verified_summary": "MPAA-style rating gate: rate(text) returns a rating, allow(text) checks it against the configured maximum, setMax/setting/order manage the ceiling.",
+  "verified_at": "2026-11-06T14:25:00-07:00",
+  "mismatches": []
+ },
+ {
+  "id": "sia-spincode-chip",
+  "call_number": "000.63 sia-spincode-chip",
+  "verified": "ran",
+  "verified_summary": "SlashCode CLI layer: run(line) executes /commands, plus text tools keywordsOf, keywordTable, summarizeExtractive, hashtagsOf, sanitizeGreek, cleanText.",
+  "verified_at": "2026-11-06T14:25:00-07:00",
+  "mismatches": []
+ },
+ {
+  "id": "sia-wishlist-chip",
+  "call_number": "000.68 sia-wishlist-chip",
+  "verified": "ran",
+  "verified_summary": "Petition ledger: ask(want) files a pending wish, decide/grant/deny record his word, pending/all/find/count read it back; in-memory without a host store.",
+  "verified_at": "2026-11-06T14:25:00-07:00",
+  "mismatches": [
+   "Wishes default to by:'alia' when no agent name is passed (run log)."
+  ]
+ },
+ {
+  "id": "chatengine-chip",
+  "call_number": "100.03 chatengine-chip",
+  "verified": "ran",
+  "verified_summary": "Chat memory engine: remember(role,handle,text) appends turns, tail/stm/ltmBlock/framePrompt build prompt context, export/import round-trip; persists through a host store or localStorage mirror, in-memory when neither exists.",
+  "verified_at": "2026-11-06T14:25:00-07:00",
+  "mismatches": []
+ },
+ {
+  "id": "chatlog-chip",
+  "call_number": "100.04 chatlog-chip",
+  "verified": "ran",
+  "verified_summary": "Turn log with a 10-turn short-term window and long-term spill after turn 11: record({role,text}), tail(n), ltm, block/frame for prompts, export/import, wipe; in-memory without a host store.",
+  "verified_at": "2026-11-06T14:25:00-07:00",
+  "mismatches": []
+ },
+ {
+  "id": "intercom-app-chip-1-mythos-chatengine-standalone",
+  "call_number": "100.05 intercom-app-chip-1-mythos-chatengine-standalone",
+  "verified": "ran",
+  "verified_summary": "Same chat memory engine as chatengine-chip (identical handle: remember, tail, stm, ltmBlock, framePrompt, export, import), shipped inside the intercom-app bundle.",
+  "verified_at": "2026-11-06T14:25:00-07:00",
+  "mismatches": [
+   "Not marked dupOf chatengine-chip although its JS is byte-identical (same sha256) and defines the same global MythosChatengine.client."
+  ]
+ },
+ {
+  "id": "minutes-chip",
+  "call_number": "100.06 minutes-chip",
+  "verified": "ran",
+  "verified_summary": "4-hour minutes beat: due(now)/status(now) say whether minutes are due, tick(collect)/force(collect) file minutes from a host collector function and refuse without one, list/last read what was filed.",
+  "verified_at": "2026-11-06T14:25:00-07:00",
+  "mismatches": []
+ },
+ {
+  "id": "mythos-agents-chip",
+  "call_number": "100.07 mythos-agents-chip",
+  "verified": "ran",
+  "verified_summary": "Data chip of 19 agent cards: all/get/providers/byProvider/count; no endpoints or keys.",
+  "verified_at": "2026-11-06T14:25:00-07:00",
+  "mismatches": []
+ },
+ {
+  "id": "mythos-lorepack-player",
+  "call_number": "100.08 mythos-lorepack-player",
+  "verified": "ran",
+  "verified_summary": "Keyword recall over lorepack rows supplied by a host readRows seam: recall(query,k) scores shared words, block(query,k) formats the top hit for a prompt.",
+  "verified_at": "2026-11-06T14:25:00-07:00",
+  "mismatches": []
+ },
+ {
+  "id": "mythos-noetic-chip",
+  "call_number": "100.10 mythos-noetic-chip",
+  "verified": "ran",
+  "verified_summary": "Three constructors: NoeticField, SymbolicEntity, LiminalAgent; small in-memory shapes with witness accounting (a NoeticField has equilibrium, level, concepts, amplification).",
+  "verified_at": "2026-11-06T14:25:00-07:00",
+  "mismatches": []
+ },
+ {
+  "id": "mythos-rag-chip",
+  "call_number": "100.11 mythos-rag-chip",
+  "verified": "ran",
+  "verified_summary": "Local semantic search: store() makes an index, add(store,id,title,text) hashes text into vectors, search(store,query,k,min) ranks by cosine; embed/cosine exposed.",
+  "verified_at": "2026-11-06T14:25:00-07:00",
+  "mismatches": []
+ },
+ {
+  "id": "sia-chattail-chip",
+  "call_number": "100.13 sia-chattail-chip",
+  "verified": "ran",
+  "verified_summary": "Keeps the last exchange across reloads: remember(role,handle,text), tail(n), missing, clear; host store or localStorage, in-memory fallback.",
+  "verified_at": "2026-11-06T14:25:00-07:00",
+  "mismatches": [
+   "Role is cut to 8 characters on save, so 'assistant' is stored as 'assistan' (seen in the headless run)."
+  ]
+ },
+ {
+  "id": "sia-journal-chip",
+  "call_number": "100.15 sia-journal-chip",
+  "verified": "ran",
+  "verified_summary": "Private journal: file(line) with inline #tags, show(n), tag(TAG,n), minutes on a 6-hour beat, exportLog/importLog; works in memory without a host store.",
+  "verified_at": "2026-11-06T14:25:00-07:00",
+  "mismatches": []
+ },
+ {
+  "id": "sia-journal-chip-1",
+  "call_number": "100.16 sia-journal-chip-1",
+  "verified": "ran",
+  "verified_summary": "Second journal build: same journal handle as sia-journal-chip plus briefing(), without gap(); defines the same global MythosJournal.client.",
+  "verified_at": "2026-11-06T14:25:00-07:00",
+  "mismatches": [
+   "Not marked dupOf sia-journal-chip although both define MythosJournal.client; whichever loads last wins."
+  ]
+ },
+ {
+  "id": "sia-logtime-chip",
+  "call_number": "100.18 sia-logtime-chip",
+  "verified": "ran",
+  "verified_summary": "Single clock for the terminal: stamp(ts) and gap(ms) format times, zone get/set/toggle, business-hours helpers, describe() renders the time block.",
+  "verified_at": "2026-11-06T14:25:00-07:00",
+  "mismatches": []
+ },
+ {
+  "id": "sia-voice-ear-chip",
+  "call_number": "200.09 sia-voice-ear-chip",
+  "verified": "ran",
+  "verified_summary": "Level-based ear over host-fed room levels: watch(track), sample(rms, track) against a threshold, ignore, state(track); refuses tracks it never watched. No mic access inside.",
+  "verified_at": "2026-11-06T14:25:00-07:00",
+  "mismatches": []
+ },
+ {
+  "id": "sia-voice-echo-chip",
+  "call_number": "200.10 sia-voice-echo-chip",
+  "verified": "ran",
+  "verified_summary": "Echo guard: remember(text) records what she said, check(heard) flags a transcript that matches her own speech, strip removes it, forget clears.",
+  "verified_at": "2026-11-06T14:25:00-07:00",
+  "mismatches": []
+ },
+ {
+  "id": "sia-voice-floor-chip",
+  "call_number": "200.11 sia-voice-floor-chip",
+  "verified": "ran",
+  "verified_summary": "Floor state machine for her voice and his mic: herTurn/herVoice/herDone, yourVoice/yourDone/yourWords, hush, canSpeak/canMic, state().",
+  "verified_at": "2026-11-06T14:25:00-07:00",
+  "mismatches": []
+ },
+ {
+  "id": "sia-voice-jitter-chip",
+  "call_number": "200.12 sia-voice-jitter-chip",
+  "verified": "ran",
+  "verified_summary": "Jitter buffer bookkeeping for PCM chunks: open/push/cover/close/drop per track, state() reports queuedMs, drops, covers; plays nothing itself.",
+  "verified_at": "2026-11-06T14:25:00-07:00",
+  "mismatches": []
+ },
+ {
+  "id": "sia-voice-say-chip",
+  "call_number": "200.13 sia-voice-say-chip",
+  "verified": "ran",
+  "verified_summary": "Speech front: split(text,n) chunks text, say(text) hands chunks to a host synth and returns 'NO SYNTH' without one, stop/state.",
+  "verified_at": "2026-11-06T14:25:00-07:00",
+  "mismatches": []
+ },
+ {
+  "id": "sia-voice-wire-chip",
+  "call_number": "200.15 sia-voice-wire-chip",
+  "verified": "ran",
+  "verified_summary": "Assembly over six voice chips passed in opts.chips (floor, say, ear, echo, jitter, stream): boot() checks each has its functions and names the missing ones, then speak/hush/hear/heard/state.",
+  "verified_at": "2026-11-06T14:25:00-07:00",
+  "mismatches": [
+   "Its stream part must be sia-voice-stream-chip, which is not a clean op (network), so the assembled wire is not clean even though this file is."
+  ]
+ },
+ {
+  "id": "gallery-tagging-chip",
+  "call_number": "300.02 gallery-tagging-chip",
+  "verified": "ran",
+  "verified_summary": "suggestTags(name, folder, prompt) derives tags from a filename and folder; importWithTags(files, opts) normalizes and adds pictures and music to the host media store with those tags.",
+  "verified_at": "2026-11-06T14:25:00-07:00",
+  "mismatches": [
+   "Undeclared host dependency: importWithTags calls window.media.normalize / window.media.add / window.media.mimeFor and writes into the host media store; card lists no side effects or dependencies.",
+   "Card still says 'interface not read yet'; the real namespace is GalleryTagging.{suggestTags, importWithTags}.",
+   "Only suggestTags is a clean op; importWithTags writes to a store."
+  ]
+ },
+ {
+  "id": "mythos-posebook",
+  "call_number": "300.07 mythos-posebook",
+  "verified": "ran",
+  "verified_summary": "Data chip of 83 render poses in 7 families with house style and negative prompt: poses/find/promptFor/addCustom/removeCustom; calls return promises.",
+  "verified_at": "2026-11-06T14:25:00-07:00",
+  "mismatches": [
+   "Card does not say the handle is async: poses(), find(), count() and promptFor() return promises."
+  ]
+ },
+ {
+  "id": "sia-gallery-chip",
+  "call_number": "300.14 sia-gallery-chip",
+  "verified": "ran",
+  "verified_summary": "ES module share ledger: addEntry lands items private, share/unshare flip one item, sharedView lists shared, counts() returns totals; host kv or localStorage, in-memory fallback.",
+  "verified_at": "2026-11-06T14:25:00-07:00",
+  "mismatches": []
+ },
+ {
+  "id": "sia-gallery-chip-2",
+  "call_number": "300.15 sia-gallery-chip-2",
+  "verified": "ran",
+  "verified_summary": "Catalogue/view engine over the host vault: filter, query, sort, paging, tags, folders and selection state over vault rows; describe() reports counts per kind.",
+  "verified_at": "2026-11-06T14:25:00-07:00",
+  "mismatches": []
+ },
+ {
+  "id": "sia-renderbook-chip",
+  "call_number": "300.16 sia-renderbook-chip",
+  "verified": "ran",
+  "verified_summary": "Book over render records in the host vault: list/find/search/byNumber/row/report/exportBook read recipes; redo(n) re-runs a recipe through a host forge, which it refuses without one. Empty without a vault.",
+  "verified_at": "2026-11-06T14:25:00-07:00",
+  "mismatches": []
+ },
+ {
+  "id": "intercom-app-chip-1-mythos-intercom-standalone",
+  "call_number": "500.05 intercom-app-chip-1-mythos-intercom-standalone",
+  "verified": "ran",
+  "verified_summary": "Push-to-talk line state for SIA: press/release/aiDone track who holds the line, remember/buildPrompt build the turn prompt; no mic or speaker code inside, the host wires audio.",
+  "verified_at": "2026-11-06T14:25:00-07:00",
+  "mismatches": []
+ },
+ {
+  "id": "intercom-chip",
+  "call_number": "500.07 intercom-chip",
+  "verified": "ran",
+  "verified_summary": "Interlocked push-to-talk floor: new IntercomChip(opts).requestFloor('BARBELO'|'MAYA') issues a ticket, holder/isMicOpen/releaseFloor/routeFinal; PATRIKIOS is monitor-only.",
+  "verified_at": "2026-11-06T14:25:00-07:00",
+  "mismatches": [
+   "Host names are case-sensitive: requestFloor('maya') throws 'not a host', only 'MAYA' works (run log)."
+  ]
+ },
+ {
+  "id": "mythos-bluf",
+  "call_number": "500.12 mythos-bluf",
+  "verified": "ran",
+  "verified_summary": "BLUF text tools: compose(line,context) builds bottom-line-first text, parse(text) splits bottom line from context, check(text) grades a message.",
+  "verified_at": "2026-11-06T14:25:00-07:00",
+  "mismatches": []
+ },
+ {
+  "id": "mythos-fleet",
+  "call_number": "500.16 mythos-fleet",
+  "verified": "ran",
+  "verified_summary": "Data chip of 46 house generators (7 public) with page and embed coords and the Dekatriadic Cluster claim, snapshot 2026-10-28; top level also exports version, snapshot, claim.",
+  "verified_at": "2026-11-06T14:25:00-07:00",
+  "mismatches": []
+ }
+]
