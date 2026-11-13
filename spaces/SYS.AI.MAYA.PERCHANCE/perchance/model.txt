@@ -1,0 +1,6 @@
+$meta
+  title = SYS.AI.MAYA.PERCHANCE - Maya space (016) - Lore Oracle
+  description = Maya's own space. Lore Oracle: grounded answers from a LorePack plus a live chatlog, with citations. Agents: #agent&op=ask&q=... Humans: the page.
+
+// ai-text-plugin: optional synthesis. The Oracle only calls it after retrieval passes the gate.
+generateText = {import:ai-text-plugin}
