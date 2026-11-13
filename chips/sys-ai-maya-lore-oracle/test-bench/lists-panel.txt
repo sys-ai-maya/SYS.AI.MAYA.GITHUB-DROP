@@ -1,0 +1,6 @@
+title
+  SYS.AI.MAYA.PERCHANCE - lore oracle chip test bench
+
+$meta
+  title = SYS.AI.MAYA.PERCHANCE lore oracle chip test bench
+  description = Test bench for the sys-ai-maya-lore-oracle chip (CHIP SPEC v1). Machine-first: #agent&op=proof

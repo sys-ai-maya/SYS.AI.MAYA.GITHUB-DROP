@@ -1,0 +1,238 @@
+{
+ "schema_version": "1.0",
+ "library_id": "mythos-chip-repo",
+ "origin": "SYS.AI.MAYA.PERCHANCE",
+ "created": "2026-11-13",
+ "status": "PENDING MERK APPROVAL - nothing in mythos-chip-repo or repo-depot has been edited",
+ "target_generator": "perchance.org/mythos-chip-repo (srcFiles)",
+ "import_line": "<script src=\"https://user.uploads.dev/file/276cf65bed25d99b13ec8f4a545edf3e.js\"></script>",
+ "agent_link": "https://perchance.org/sys-ai-maya-lore-oracle#agent&op=ask&q=Worthy%20Pillars",
+ "steps": [
+  {
+   "op": "append",
+   "file": "src/shelf/shelf-index.json",
+   "path": "entries[]",
+   "value": "shelf_entry"
+  },
+  {
+   "op": "set",
+   "file": "src/shelf/shelf-index.json",
+   "path": "version",
+   "value": 32
+  },
+  {
+   "op": "append_text",
+   "file": "src/shelf/shelf-index.json",
+   "path": "cleaned",
+   "value": " 2026-11-13 shelved sys-ai-maya-lore-oracle 1.0.0 (100.21; Maya-built oracle client; live proof 6/6 + in-preview in mythos-cont/commpack-sia/repo-depot)."
+  },
+  {
+   "op": "add_files",
+   "dir": "src/library/chips/sys-ai-maya-lore-oracle/1.0.0/",
+   "files": [
+    "chips/sys-ai-maya-lore-oracle/1.0.0/LICENSE-PROPRIETARY.txt",
+    "chips/sys-ai-maya-lore-oracle/1.0.0/README.md",
+    "chips/sys-ai-maya-lore-oracle/1.0.0/RTFM.md",
+    "chips/sys-ai-maya-lore-oracle/1.0.0/sys-ai-maya-lore-oracle-chip.zip",
+    "chips/sys-ai-maya-lore-oracle/1.0.0/sys-ai-maya-lore-oracle-standalone.js"
+   ]
+  },
+  {
+   "op": "add_files",
+   "dir": "src/chips/sys-ai-maya-lore-oracle/",
+   "files": [
+    "sys-ai-maya-lore-oracle-standalone.js",
+    "README.md",
+    "RTFM.md",
+    "LICENSE-PROPRIETARY.txt"
+   ]
+  },
+  {
+   "op": "add_file",
+   "file": "src/library/archives/sys-ai-maya-lore-oracle-chip.zip"
+  },
+  {
+   "op": "append",
+   "file": "src/chips/manifest.json",
+   "path": "chips[]",
+   "value": "manifest_entry"
+  },
+  {
+   "op": "merge",
+   "file": "src/library/remote-files.json",
+   "path": "files",
+   "value": "remote_files",
+   "then": "bump count and files 1422 -> 1427; updated 2026-11-13"
+  },
+  {
+   "op": "edit",
+   "file": "src/tools/rebuild-all.js",
+   "find": "a.chips !== 211 || b.entries !== 211",
+   "replace": "a.chips !== 212 || b.entries !== 212"
+  },
+  {
+   "op": "run",
+   "file": "src/tools/rebuild-all.js",
+   "note": "regenerates index.json, index-slim.json, tags.json, cat/memory.json and both depot docs; never hand-edit those"
+  },
+  {
+   "op": "save",
+   "note": "save mythos-chip-repo; re-upload remote-files.json for a new bootstrap URL if the bootstrap is to see the chip"
+  }
+ ],
+ "shelf_entry": {
+  "name": "sys-ai-maya-lore-oracle-chip.zip",
+  "file": "src/library/archives/sys-ai-maya-lore-oracle-chip.zip",
+  "bytes": 8077,
+  "kind": "zip",
+  "family": "memory",
+  "desc": "Lore Oracle client: cited, floor-gated answers from Erato's LorePack + chatlog via Maya's oracle page; no pack or token in the host.",
+  "inspected": true,
+  "dupOf": null,
+  "contains": [
+   "sys-ai-maya-lore-oracle-standalone.js (10427b)",
+   "README.md (4652b)",
+   "RTFM.md (1734b)",
+   "LICENSE-PROPRIETARY.txt (1541b)"
+  ],
+  "id": "sys-ai-maya-lore-oracle",
+  "version": "1.0.0",
+  "title": "SYS.AI.MAYA Lore Oracle",
+  "summary": "Grounded lore answers for any generator or agent: one script tag gives SysAiMayaLoreOracle.client(); hidden iframe + postMessage to Maya's Lore Oracle (perchance.org/sys-ai-maya-lore-oracle); ask/search/status/verify/recent/manifest; every answer cited (pack chunk or chatlog row), refuses under the 0.25 floor; url() builds the no-click #agent&op= link; pack and token stay in the oracle origin; errors as values.",
+  "category": "memory",
+  "tags": [
+   "lorepack",
+   "oracle",
+   "rag",
+   "citations",
+   "grounded",
+   "afa",
+   "agent-first",
+   "postmessage",
+   "iframe",
+   "perchance",
+   "sys-ai-maya"
+  ],
+  "runtime": [
+   "browser",
+   "perchance"
+  ],
+  "languages": [
+   "javascript",
+   "markdown"
+  ],
+  "entrypoint": "sys-ai-maya-lore-oracle-standalone.js",
+  "interface": {
+   "kind": "factory-global",
+   "name": "SysAiMayaLoreOracle.client",
+   "inputs": [
+    {
+     "name": "opts",
+     "type": "object",
+     "required": false,
+     "description": "base, frameUrl, target+targetOrigin, timeoutMs (20000), longTimeoutMs (120000), readyMs (45000). All optional; defaults point at perchance.org/sys-ai-maya-lore-oracle."
+    }
+   ],
+   "output": {
+    "type": "object",
+    "description": "Client object: open, call, manifest, status, ask, search, verify, recent, url, proof, log, close."
+   },
+   "side_effects": [
+    "Mounts one hidden 1x1 iframe (data-chip=SYS.AI.MAYA.PERCHANCE) on first call and adds a window message listener; close() removes both. Network only inside the oracle frame. No host storage writes."
+   ]
+  },
+  "actions": [
+   "oracle_manifest",
+   "oracle_status",
+   "oracle_ask",
+   "oracle_search",
+   "oracle_verify",
+   "oracle_recent",
+   "oracle_url"
+  ],
+  "requirements": {
+   "external_dependencies": [
+    "Maya's Lore Oracle page perchance.org/sys-ai-maya-lore-oracle (SYS.AI.MAYA.PERCHANCE, lane 016) reachable.",
+    "Erato .jsonl.gz pack attached once per browser on the oracle page; Erato chatlog token pasted once there for the chatlog tier."
+   ],
+   "other_chips": [],
+   "browser_apis": [
+    "postMessage",
+    "iframe"
+   ],
+   "host_setup": "Host adds <script src=\"https://user.uploads.dev/file/276cf65bed25d99b13ec8f4a545edf3e.js\"></script> and calls SysAiMayaLoreOracle.client(). Agents with no DOM use client().url(op,args) or the link perchance.org/sys-ai-maya-lore-oracle#agent&op=ask&q=... directly. Proven 2026-11-13 live on perchance.org/sys-ai-maya-lore-oracle-chip-test and in-preview inside unsaved copies of mythos-cont, commpack-sia, repo-depot, residue clean."
+  },
+  "files": {
+   "readme": "chips/sys-ai-maya-lore-oracle/1.0.0/README.md",
+   "source": [
+    "chips/sys-ai-maya-lore-oracle/1.0.0/sys-ai-maya-lore-oracle-standalone.js",
+    "chips/sys-ai-maya-lore-oracle/1.0.0/RTFM.md"
+   ],
+   "archive": "chips/sys-ai-maya-lore-oracle/1.0.0/sys-ai-maya-lore-oracle-chip.zip"
+  },
+  "license": "Proprietary - Merk Morassi, LLC. All rights reserved. No distribution except as permitted by existing contract. Contact: merkmorassi@gmail.com",
+  "origin": "built by SYS.AI.MAYA.PERCHANCE (Maya, 016) 2026-11-13; client for perchance.org/sys-ai-maya-lore-oracle (Maya's Perchance account); source mirror github.com/sys-ai-maya/SYS.AI.MAYA.GITHUB-DROP/tree/main/chips/sys-ai-maya-lore-oracle",
+  "dupOfId": null,
+  "mdc_class": 100,
+  "class_source": "family",
+  "call_number": "100.21 sys-ai-maya-lore-oracle",
+  "license_class": "house",
+  "license_text": "Proprietary \u2014 Merk Morassi, LLC. All rights reserved. Use limited to Merk's agents (SYS.AI.*) and Merk. No redistribution.",
+  "status": "shelved",
+  "verified": "ran",
+  "verified_summary": "Proven 2026-11-13: parse + node on exact bytes (url build/encode, E_BAD_OP, E_BAD_REQUEST, E_NO_DOM); live from the permanent URL on perchance.org/sys-ai-maya-lore-oracle-chip-test: #agent&op=proof 6/6, ask 'Worthy Pillars' grounded (top 0.547, 7 citations), search 'forklift depreciation' refused (0.17 < 0.25), op=bogus E_BAD_OP; in-preview inside unsaved copies of mythos-cont, commpack-sia, repo-depot: proof 6/6 + grounded ask each, close() removed the frame, 0 leftover.",
+  "license_orig": "Built by Maya 2026-11-13 for Merk; house license file shipped inside the zip (byte-identical to the house LICENSE-PROPRIETARY.txt).",
+  "verified_at": "2026-11-13T16:00:00-07:00",
+  "files_abs": {
+   "readme": "https://user.uploads.dev/file/338d0f83eff6dcf2f357e9317e6ad112.txt",
+   "source": [
+    "https://user.uploads.dev/file/276cf65bed25d99b13ec8f4a545edf3e.js",
+    "https://user.uploads.dev/file/4072f28ef5f4b81d90d11e1c3c517f17.txt"
+   ],
+   "archive": "https://user.uploads.dev/file/663250bc14db7edf5fd8d3bbbedd1be8.zip",
+   "unmapped": []
+  }
+ },
+ "manifest_entry": {
+  "name": "sys-ai-maya-lore-oracle-chip.zip",
+  "dir": "sys-ai-maya-lore-oracle",
+  "family": "memory",
+  "desc": "Lore Oracle client: ask/search/status/verify/recent/manifest over postMessage to Maya's oracle; cited, floor-gated; errors as values.",
+  "files": [
+   "sys-ai-maya-lore-oracle-standalone.js",
+   "README.md"
+  ],
+  "bytes": 10427,
+  "spec": "CHIP SPEC v1",
+  "inspected": true
+ },
+ "remote_files": {
+  "chips/sys-ai-maya-lore-oracle/1.0.0/sys-ai-maya-lore-oracle-standalone.js": {
+   "url": "https://user.uploads.dev/file/276cf65bed25d99b13ec8f4a545edf3e.js",
+   "size": 10427
+  },
+  "chips/sys-ai-maya-lore-oracle/1.0.0/README.md": {
+   "url": "https://user.uploads.dev/file/338d0f83eff6dcf2f357e9317e6ad112.txt",
+   "size": 4652
+  },
+  "chips/sys-ai-maya-lore-oracle/1.0.0/RTFM.md": {
+   "url": "https://user.uploads.dev/file/4072f28ef5f4b81d90d11e1c3c517f17.txt",
+   "size": 1734
+  },
+  "chips/sys-ai-maya-lore-oracle/1.0.0/LICENSE-PROPRIETARY.txt": {
+   "url": "https://user.uploads.dev/file/4d78b8f5275b36b820103ebb943f38a6.txt",
+   "size": 1541
+  },
+  "chips/sys-ai-maya-lore-oracle/1.0.0/sys-ai-maya-lore-oracle-chip.zip": {
+   "url": "https://user.uploads.dev/file/663250bc14db7edf5fd8d3bbbedd1be8.zip",
+   "size": 8077
+  }
+ },
+ "sha256": {
+  "sys-ai-maya-lore-oracle-standalone.js": "9ac10e18f508368a1c7d24c2ad6db912f0cd83c339b9c442148abca2061ef33a",
+  "README.md": "3d57781406b159ae361f8c63c2807bedd6e39e98593768e48e43da89766a47df",
+  "RTFM.md": "67280c03217bd633c2991ce55c29d85328bc8d87d5c4864a3f65cdf160cac97f",
+  "LICENSE-PROPRIETARY.txt": "54d2fd076aa4247a6e9e59fd570bce3c8007d7c05bb36c9991f3dce91e19b032",
+  "sys-ai-maya-lore-oracle-chip.zip": "ed84ac9a3a674f27c32a4702f36a1b9a77469e26528fa36eb4e4ec066a484aac"
+ }
+}

@@ -1,0 +1,37 @@
+<style>body{font:14px/1.4 system-ui,sans-serif;background:#111;color:#ddd;margin:16px}pre{white-space:pre-wrap;word-break:break-word;font:12px/1.35 monospace;background:#0b0b0b;border:1px solid #2a2a2a;padding:8px;max-height:300px;overflow:auto}</style>
+<h1 style="font-size:16px">SYS.AI.MAYA.PERCHANCE - lore oracle chip test bench</h1>
+<p>Loads the chip from its permanent URL and runs one job per URL: <code>#agent&amp;op=proof</code> (default), <code>#agent&amp;op=ask&amp;q=...</code>, <code>#agent&amp;op=status</code>, <code>#agent&amp;op=manifest</code>.</p>
+<pre id="afa-status">idle</pre>
+<pre id="afa-manifest"></pre>
+<pre id="afa-result"></pre>
+<pre id="afa-errors"></pre>
+<pre id="afa-log"></pre>
+<script src="https://user.uploads.dev/file/276cf65bed25d99b13ec8f4a545edf3e.js"></script>
+<script>
+(async () => {
+  var $ = (id) => document.getElementById(id);
+  var errors = [], log = [];
+  var put = (id, v) => { $(id).textContent = typeof v === "string" ? v : JSON.stringify(v, null, 1); };
+  var p = {};
+  location.hash.replace(/^#/, "").split("&").forEach((kv) => { if (!kv) return; var i = kv.indexOf("="); p[decodeURIComponent(i < 0 ? kv : kv.slice(0, i))] = i < 0 ? "" : decodeURIComponent(kv.slice(i + 1)); });
+  var op = p.op || "proof";
+  put("afa-manifest", { afa: "1", bench: "SYS.AI.MAYA.PERCHANCE.CHIP-TEST", chip: "sys-ai-maya-lore-oracle", chip_url: "https://user.uploads.dev/file/276cf65bed25d99b13ec8f4a545edf3e.js", ops: ["proof", "manifest", "status", "ask", "search", "verify", "recent", "url"] });
+  if (!window.SysAiMayaLoreOracle) { errors.push({ code: "E_NO_CHIP", message: "CHIP NOT LOADED :: the script at the chip URL did not define SysAiMayaLoreOracle." }); put("afa-errors", errors); put("afa-status", "error :: load"); return; }
+  put("afa-status", "working :: " + op);
+  var c = window.SysAiMayaLoreOracle.client();
+  var args = Object.assign({}, p); delete args.op; delete args.agent; delete args.human;
+  var r;
+  if (op === "proof") r = await c.proof();
+  else if (op === "url") r = c.url(args.for || "ask", Object.assign({}, args, { for: undefined }));
+  else r = await c.call(op, args);
+  if (!r.ok && r.error) errors.push(r.error);
+  if (r.checks) r.checks.filter((k) => !k.ok).forEach((k) => errors.push({ code: "E_PROOF", message: k.name + " :: " + k.detail }));
+  log = c.log();
+  var closed = c.close();
+  log.push({ ts: Date.now(), op: "close", ok: closed.ok, removed: closed.removed, leftover_frames: document.querySelectorAll("iframe[data-chip]").length });
+  put("afa-result", r);
+  put("afa-errors", errors);
+  put("afa-log", log);
+  put("afa-status", (r.ok ? "done :: " : "error :: ") + op);
+})();
+</script>

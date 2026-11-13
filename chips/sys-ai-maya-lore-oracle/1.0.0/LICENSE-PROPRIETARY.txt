@@ -1,0 +1,33 @@
+PROPRIETARY LICENSE — ALL RIGHTS RESERVED
+
+Copyright (c) 2026 Merk Morassi, LLC. All rights reserved.
+
+This software and its accompanying documentation (the "Software") is the
+exclusive property of Merk Morassi, LLC ("Owner").
+
+1. PERMITTED USE. The Software may be used solely by Assigned Agents
+   operating under an existing contract with the Owner, and only to the
+   extent that such contract expressly permits. Any use beyond the scope
+   of an existing contract is prohibited.
+
+2. NO DISTRIBUTION. Sharing, copying, publishing, uploading, transmitting,
+   sublicensing, selling, renting, leasing, or otherwise distributing the
+   Software, in whole or in part, is strictly prohibited, except as
+   expressly permitted by an existing written contract with the Owner.
+
+3. NO MODIFICATION OR DERIVATIVES. Modifying, adapting, translating,
+   reverse engineering, decompiling, or creating derivative works based on
+   the Software is prohibited, except as expressly permitted by an existing
+   written contract with the Owner.
+
+4. OWNERSHIP. The Owner retains all right, title, and interest in and to
+   the Software, including all intellectual property rights therein. No
+   rights are granted except as expressly stated in Section 1.
+
+5. TERMINATION. Any use, copying, or distribution outside the terms of
+   this license automatically terminates all rights granted herein.
+
+6. DISCLAIMER. THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY
+   KIND, EXPRESS OR IMPLIED.
+
+For permission requests, contact: merkmorassi@gmail.com
