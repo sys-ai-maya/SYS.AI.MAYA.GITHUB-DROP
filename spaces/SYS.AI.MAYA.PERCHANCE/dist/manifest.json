@@ -1,0 +1,82 @@
+{
+ "space": "SYS.AI.MAYA.PERCHANCE",
+ "lane": "016",
+ "built": "2026-11-13T22:16:28.420906Z",
+ "bundle": {
+  "file": "dist/maya-space.js",
+  "bytes": 91372,
+  "sha256": "6eba361fbd87102144c4044d336215a37de2776f82e7a42f70fc40c875c2a766"
+ },
+ "pieces": [
+  {
+   "piece": "config",
+   "file": "js/config.js",
+   "bytes": 2154,
+   "sha256": "af2667f3fbbace8c8f5b3936b08d4dd8b482b164919bc7fd87269de3be3d8e0e",
+   "origin": "Maya"
+  },
+  {
+   "piece": "mode",
+   "file": "js/mode.js",
+   "bytes": 2124,
+   "sha256": "2081bbd78464d20c8799c42affd08e1a0c3c0f1a263e33b730db89d850d35ff3",
+   "origin": "Maya"
+  },
+  {
+   "piece": "afa",
+   "file": "js/afa.js",
+   "bytes": 2952,
+   "sha256": "f098fd0c3ea367ddd610062b8b3f79f64986c3a014d3450c1ec87056192413cf",
+   "origin": "Maya"
+  },
+  {
+   "piece": "minilm",
+   "file": "js/minilm.js",
+   "bytes": 9131,
+   "sha256": "13f01f5d1703a6288dabb7321e504cc7377f763d7eb777524658d0fcc71e3263",
+   "origin": "Pat: repo-depot js/mythos-minilm-standalone.js (vendored unchanged)"
+  },
+  {
+   "piece": "minilm-player",
+   "file": "js/minilm-player.js",
+   "bytes": 37619,
+   "sha256": "824d8cbdd96dbb65790e0e9ab9e7469e1034be1796c7cb1a105e53216192d577",
+   "origin": "Pat: repo-depot js/mythos-minilm-player-standalone.js (vendored; SYS.AI.MAYA seams: loadStream, isVec, header)"
+  },
+  {
+   "piece": "lore-pack",
+   "file": "js/lore-pack.js",
+   "bytes": 4171,
+   "sha256": "86714e5b25440100b303000b74ce1d8063504e8c3f9d10927990c86085a47064",
+   "origin": "Maya"
+  },
+  {
+   "piece": "lore-chatlog",
+   "file": "js/lore-chatlog.js",
+   "bytes": 5537,
+   "sha256": "aa0e7b967e3ba29e210732b1c85af283400c68e1732bfcd0667b9fff0b8f4c23",
+   "origin": "Maya"
+  },
+  {
+   "piece": "oracle",
+   "file": "js/oracle.js",
+   "bytes": 11397,
+   "sha256": "11cbae958a7325c874a3310ce8de40f0d989e73da7635706589397231ffa0dc5",
+   "origin": "Maya"
+  },
+  {
+   "piece": "comms",
+   "file": "js/comms.js",
+   "bytes": 2697,
+   "sha256": "88bdbc8616f34cf7bb91c19e4c6af87c2b7784544f49297ec7c45325d9d1b21c",
+   "origin": "Maya"
+  },
+  {
+   "piece": "space",
+   "file": "js/space.js",
+   "bytes": 13064,
+   "sha256": "69062c87c93b2e76412ba486d7b0ee62844ad95d64dadd8975d4837375288afc",
+   "origin": "Maya"
+  }
+ ]
+}
